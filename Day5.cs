@@ -8,6 +8,7 @@ public class Day5
         var rules = lines.Where(l => l.Contains('|')).Select(l => l.Split('|').Select(int.Parse).ToArray()).ToArray();
         var updates = lines.Where(l => !l.Contains('|')).Select(l => l.Split(',').Select(int.Parse).ToArray()).ToList();
 
+
         bool FollowsRules(int[] update)
         {
             var notAllowed = new HashSet<int>();
