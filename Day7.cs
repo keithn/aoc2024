@@ -11,7 +11,7 @@ public class Day7
             var weights = parts[1].Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(long.Parse).ToArray();
             return new Calibration(value, weights);
         }
-        public bool IsValid(bool allowConcat) => CheckCombination(0, Weights[0], allowConcat);
+        public bool IsValid(bool allowConcat = false) => CheckCombination(0, Weights[0], allowConcat);
 
         private bool CheckCombination(int index, long current, bool allowConcat)
         {
@@ -28,7 +28,7 @@ public class Day7
     {
         var lines = input.Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
         var calibrations = lines.Select(Calibration.Parse).ToList();
-        var part1 = calibrations.Where(c => c.IsValid(false)).Sum(c => c.Value);
+        var part1 = calibrations.Where(c => c.IsValid()).Sum(c => c.Value);
         Console.WriteLine(part1);
         var part2 = calibrations.Where(c => c.IsValid(true)).Sum(c => c.Value);
         Console.WriteLine(part2);
