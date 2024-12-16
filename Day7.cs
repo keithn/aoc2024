@@ -6,10 +6,8 @@ public class Day7
     {
         public static Calibration Parse(string s)
         {
-            var parts = s.Split(':');
-            var value = long.Parse(parts[0]);
-            var weights = parts[1].Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(long.Parse).ToArray();
-            return new Calibration(value, weights);
+            var parts = s.Split([':', ' '], StringSplitOptions.RemoveEmptyEntries).Select(long.Parse).ToArray();
+            return new Calibration(parts[0], parts[1..]);
         }
         public bool IsValid(bool allowConcat = false) => CheckCombination(0, Weights[0], allowConcat);
 
