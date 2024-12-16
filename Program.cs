@@ -11,7 +11,9 @@ using Aoc2024;
 // Day5.Solve(Load("Day5.txt"));
 // Day6.Solve(Load("Day6Example.txt"));
 // Day6.Solve(Load("Day6.txt"));
-Day7.Solve(Load("Day7Example.txt"));
-Day7.Solve(Load("Day7.txt"));
+// Day7.Solve(Load("Day7Example.txt"));
+// Day7.Solve(Load("Day7.txt"));
+Day8.Solve(Load("Day8Example.txt"));
+Day8.Solve(Load("Day8.txt"));
 
 string Load(string file) => File.ReadAllText(Path.ChangeExtension(file, ".txt"));
